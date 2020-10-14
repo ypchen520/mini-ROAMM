@@ -45,11 +45,15 @@ $(document).ready(function() {
     console.log('[ChenBai] Request accel sensor to start.');
     
     document.getElementById('save_file').addEventListener("click", function() {
-    		try {
+			document.getElementById("status").innerHTML = "SAVING...";
+    	    try {
     			dataTransmission_saveLocally();
     			window.setTimeout(function() {
-    				document.getElementById("status").innerHTML = "SAVING...";
-    			}, 1000*10)
+    				document.getElementById("status").innerHTML = "SAVED!";
+    			}, 1000*5);
+    			window.setTimeout(function() {
+    				document.getElementById("status").innerHTML = "RUNNING...";
+    			}, 1000*10);
     		}
     		catch(e) {
     			console.log("[Error saving files by clicking the button]: " + e)
@@ -66,7 +70,14 @@ $(document).ready(function() {
     			console.log('[ChenBai] Output all the data');
     		}, 100*1000);*/
     		window.setInterval(function() {
+    			document.getElementById("status").innerHTML = "SAVING...";
     			dataTransmission_saveLocally();
+    			window.setTimeout(function() {
+    				document.getElementById("status").innerHTML = "SAVED!";
+    			}, 1000*5);
+    			window.setTimeout(function() {
+    				document.getElementById("status").innerHTML = "RUNNING...";
+    			}, 1000*10);
     		}, 1000*60*30); // save data every 30 mins.
     }, 10*1000);
 });
