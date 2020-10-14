@@ -23,20 +23,20 @@ $(document).ready(function() {
     	console.log("error"+e);
     }
     
-    function onsuccessPermission(){
-    	console.log("Success");
-    	tizen.filesystem.resolve("documents", onsuccess, onerror, "rw");
-    }
-    
-    function onErrorPermission(e){
-    	console.log("error "+ JSON.stringify(e));
-    }
-    
-    function init(){
-    	tizen.ppm.requestPermission("http://tizen.org/privilege/mediastorage", onsuccessPermission, onErrorPermission);
-    }
-    
-    init();
+//    function onsuccessPermission(){
+//    	console.log("Success");
+//    	tizen.filesystem.resolve("documents", onsuccess, onerror, "rw");
+//    }
+//    
+//    function onErrorPermission(e){
+//    	console.log("error "+ JSON.stringify(e));
+//    }
+//    
+//    function init(){
+//    	tizen.ppm.requestPermission("http://tizen.org/privilege/mediastorage", onsuccessPermission, onErrorPermission);
+//    }
+//    
+//    init();
     try {
     		createDBUsingWrapper();
     }catch(e) {
